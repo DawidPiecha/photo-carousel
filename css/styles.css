@@ -59,3 +59,9 @@ body {
   top: 45%;
   right: 1%;
 }
+
+.slide-number {
+  text-align: center;
+  color: black;
+  font-size: 35px;
+}

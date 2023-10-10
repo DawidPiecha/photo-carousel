@@ -5,7 +5,7 @@ const slideNumber = document.querySelector(".slide-number");
 let currentSlideIndex = 0;
 
 // Funkcja do wyświetlania aktualnego slajdu
-function showSlide(index) {
+const showSlide = (index) => {
   slides.forEach((slide, i) => {
     if (i === index) {
       slide.style.opacity = 1;
@@ -16,7 +16,7 @@ function showSlide(index) {
   const currentSlideNumber = index + 1; // Indeksujemy od 0, więc dodajemy 1
   const totalSlides = slides.length;
   slideNumber.textContent = `${currentSlideNumber}/${totalSlides}`;
-}
+};
 
 // Funkcja do przełączania na poprzedni slajd
 function prevSlide() {
@@ -29,6 +29,29 @@ function nextSlide() {
   currentSlideIndex = (currentSlideIndex + 1) % slides.length;
   showSlide(currentSlideIndex);
 }
+
+const start = document.querySelector(".button-start");
+const pause = document.querySelector(".button-pause");
+const stop = document.querySelector(".button-stop");
+let autoSlideShow;
+pause.disabled = true;
+
+start.addEventListener("click", () => {
+  autoSlideShow = setInterval(() => {
+    nextSlide();
+  }, 4000);
+  start.disabled = true;
+  pause.disabled = false;
+});
+
+pause.addEventListener("click", () => {
+  clearInterval(autoSlideShow);
+  pause.disabled = true;
+  start.disabled = false;
+});
+stop.addEventListener("click", () => {
+  location.reload();
+});
 
 // Obsługa kliknięć przycisków prev i next
 prevBtn.addEventListener("click", prevSlide);

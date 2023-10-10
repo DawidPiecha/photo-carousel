@@ -56,6 +56,7 @@ body {
 }
 
 .btn-next {
+  z-index: 111px;
   top: 45%;
   right: 1%;
 }
@@ -68,4 +69,18 @@ body {
   padding: 10px 40px;
   border-radius: 15%;
   background-color: white;
+}
+.auto-button {
+  fill: white;
+  border: none;
+  background-color: black;
+  border-radius: 50%;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.auto-button:active {
+  transform: scale(1.1);
+}
+.auto-button:disabled {
+  fill: rgb(44, 46, 46);
 }

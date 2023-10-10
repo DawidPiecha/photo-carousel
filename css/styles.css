@@ -70,6 +70,10 @@ body {
   border-radius: 15%;
   background-color: white;
 }
+.auto-move {
+  display: flex;
+  column-gap: 15px;
+}
 .auto-button {
   fill: white;
   border: none;
@@ -78,9 +82,13 @@ body {
   padding: 10px 12px;
   cursor: pointer;
 }
+.auto-button:hover {
+  transform: scale(1.05);
+}
 .auto-button:active {
   transform: scale(1.1);
 }
 .auto-button:disabled {
   fill: rgb(44, 46, 46);
+  transform: rotate(45deg);
 }

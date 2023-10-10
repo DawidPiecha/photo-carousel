@@ -81,6 +81,7 @@ body {
   border-radius: 50%;
   padding: 10px 12px;
   cursor: pointer;
+  transition: transform 700ms, fill 700ms;
 }
 .auto-button:hover {
   transform: scale(1.05);

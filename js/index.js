@@ -39,7 +39,7 @@ pause.disabled = true;
 start.addEventListener("click", () => {
   autoSlideShow = setInterval(() => {
     nextSlide();
-  }, 4000);
+  }, 3500);
   start.disabled = true;
   pause.disabled = false;
 });
